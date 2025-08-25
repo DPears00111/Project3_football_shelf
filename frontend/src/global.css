@@ -1,0 +1,68 @@
+html, body, * {
+  font-family: 'Arial Black', Arial, sans-serif !important;
+}
+/* Global Responsive Enhancements */
+@media (max-width: 1200px) {
+  .container, .payment-card, .auth-form {
+    max-width: 90vw;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container, .payment-card, .auth-form {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+  .products-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container, .payment-card, .auth-form {
+    max-width: 100vw;
+    padding: 0.5rem;
+  }
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .header, .app-navbar, .panel-header, .panel-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .checkout-btn, .cart-badge, .logo, .header-icons img {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.1rem;
+  }
+  .video-container video {
+    width: 100vw !important;
+    height: auto !important;
+  }
+}
+/* Tailwind base - if using Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shared variables */
+:root {
+  --primary: #ffffff;
+  --primary-dark: #000000;
+  --danger: #000000;
+}
+
+/* Auth form unification */
+.auth-form input {
+  @apply w-full p-3 border rounded-lg mb-4;
+}
+
+.auth-form button {
+  @apply w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors;
+}
+
+/* Payment form consistency */
+.payment-card {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
