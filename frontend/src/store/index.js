@@ -65,7 +65,7 @@ export default createStore({
     async loadProducts({ commit }) {
       commit('SET_LOADING', true);
       try {
-        const response = await api.get('/jerseys');
+        const response = await api.get('https://project3-football-shelf.onrender.com/jerseys');
         commit('SET_PRODUCTS', response.data);
         commit('SET_ERROR', null);
       } catch (error) {
@@ -78,7 +78,7 @@ export default createStore({
     async login({ commit }, credentials) {
       commit('SET_LOADING', true);
       try {
-        const response = await api.post('/auth/login', credentials);
+        const response = await api.post('https://project3-football-shelf.onrender.com/auth/login', credentials);
         commit('SET_USER', response.data.user);
         localStorage.setItem('token', response.data.token);
         commit('SET_ERROR', null);
@@ -93,7 +93,7 @@ export default createStore({
     async signup({ commit }, userData) {
       commit('SET_LOADING', true);
       try {
-        const response = await api.post('/auth/signup', userData);
+        const response = await api.post('https://project3-football-shelf.onrender.com/auth/signup', userData);
         commit('SET_USER', response.data.user);
         localStorage.setItem('token', response.data.token);
         commit('SET_ERROR', null);
