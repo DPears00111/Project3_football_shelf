@@ -99,15 +99,7 @@
         <div v-if="isLoading" class="loading">Loading products...</div>
         <div v-else-if="error" class="error-message">{{ error }}</div>
         <div v-else class="product-carousel-wrapper">
-          <Carousel
-            :items-to-show="3"
-            :wrap-around="true"
-            :mouse-drag="true"
-            :transition="700"
-            :autoplay="true"
-            :autoplayTimeout="2000"
-            navigationEnabled
-          >
+
             <Slide v-for="product in products" :key="product.id">
               <div class="product-card">
                 <div class="product-image">
@@ -123,7 +115,7 @@
                 </div>
               </div>
             </Slide>
-          </Carousel>
+
           
         </div>
       </div>
@@ -160,8 +152,6 @@ import { ref, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import AppNavbar from '@/components/AppNavbar.vue';
-import { Carousel, Slide } from 'vue3-carousel';
-import 'vue3-carousel/dist/carousel.css';
 
 export default {
   name: 'HomePage',
